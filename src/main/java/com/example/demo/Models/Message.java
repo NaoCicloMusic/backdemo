@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Message {
     private int id;
+    private String numControl;
     private String name;
-    private String content;  // Aquí se guardará lo que escribas en "Descripción"
-    private String imageUrl; // Aquí se guardará el enlace de la "Imagen"
+    private String content;
 }
