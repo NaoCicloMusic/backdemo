@@ -12,13 +12,19 @@ public class MessageController {
     private List<Message> mensajes = new ArrayList<>();
 
     public MessageController() {
-        // Solo Aaron y Julian
-        mensajes.add(new Message(1, "23640278", "Aaron", "¡Hola, mi backend ya funciona!"));
-        mensajes.add(new Message(2, "23640095", "Julian", "Conexión exitosa entre ambos."));
+        mensajes.add(new Message(1, "23640278", "Aaron", "¡Hola, mi backend ya funciona!", null));
+mensajes.add(new Message(2, "23640095", "Julian", "Conexión exitosa entre ambos.", null));
     }
 
     @GetMapping
     public List<Message> despliegueMensajes() {
         return mensajes;
+    }
+
+    @PostMapping
+    public Message crearMensaje(@RequestBody Message mensaje) {
+        mensaje.setId(mensajes.size() + 1);
+        mensajes.add(mensaje);
+        return mensaje;
     }
 }

@@ -12,4 +12,5 @@ public class Message {
     private String numControl;
     private String name;
     private String content;
+    private String imageUrl;  // ← agregar esto
 }
