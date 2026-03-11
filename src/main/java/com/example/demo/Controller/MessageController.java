@@ -10,7 +10,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class MessageController {
 
-    // Usamos 'static' para que la lista persista mientras el servidor esté encendido
+    // Cambiado a static para que los datos persistan en memoria
     private static List<Message> mensajes = new ArrayList<>();
 
     // Bloque estático para inicializar datos de prueba una sola vez
@@ -26,12 +26,11 @@ public class MessageController {
 
     @PostMapping
     public Message crearMensaje(@RequestBody Message nuevoMensaje) {
-        // Generamos un ID simple basado en el tamaño de la lista
+        // Generar ID automático
         int nuevoId = mensajes.isEmpty() ? 1 : mensajes.get(mensajes.size() - 1).getId() + 1;
         nuevoMensaje.setId(nuevoId);
         
         mensajes.add(nuevoMensaje);
-        System.out.println("Mensaje guardado: " + nuevoMensaje.getName());
         return nuevoMensaje;
     }
 }
