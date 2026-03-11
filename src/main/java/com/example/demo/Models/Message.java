@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 public class Message {
     private int id;
     private String name;
-    private String content;  // Descripción
-    private String imageUrl; // URL de la imagen
+    private String content;  // Aquí se guardará lo que escribas en "Descripción"
+    private String imageUrl; // Aquí se guardará el enlace de la "Imagen"
 }
