@@ -6,16 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/mensajes") // Antes decía /mensaje, ahora coincide con el front
-@CrossOrigin(origins = "http://localhost:4200") // Permiso para tu página de Angular
+@RequestMapping("/api/mensajes")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MessageController {
 
     @GetMapping
     public List<Message> listarMensajes() {
         List<Message> mensajes = new ArrayList<>();
-        // Datos de prueba para que veas que sí carga
-        mensajes.add(new Message(1, "Aaron", "aaron@correo.com", "¡Ya funciona el backend!"));
-        mensajes.add(new Message(2, "Julian", "julian@correo.com", "Conexión exitosa."));
+        // IMPORTANTE: El orden debe ser (id, nombre, contenido, imagen)
+        mensajes.add(new Message(1, "Aaron", "Esta es la descripción del mensaje", "https://picsum.photos/200"));
+        mensajes.add(new Message(2, "Julian", "Prueba de imagen con descripción", "https://picsum.photos/201"));
         return mensajes;
     }
-}               
+}

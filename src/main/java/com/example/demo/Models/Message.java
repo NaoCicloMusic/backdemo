@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Message {
     private int id;
-    private String NumControl;
     private String name;
-    private String content;
+    private String content;  // Descripción
+    private String imageUrl; // URL de la imagen
 }
